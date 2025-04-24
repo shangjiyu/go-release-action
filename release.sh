@@ -26,7 +26,7 @@ fi
 if [ ! -z "${INPUT_GOARM}" ] && [[ "${INPUT_GOARCH}" == 'arm' ]]; then
   RELEASE_ASSET_NAME=${BINARY_NAME}-${RELEASE_TAG}-${INPUT_GOOS}-${INPUT_GOARCH}v${INPUT_GOARM}
 fi
-if [ ! -z "${INPUT_GOMIPS}" ] && [[ "${INPUT_GOARCH}" -eq 'mips' || "${INPUT_GOARCH}" -eq 'mipsle' || "${INPUT_GOARCH}" -eq 'mips64' || "${INPUT_GOARCH}" -eq 'mips64le' ]]; then
+if [ ! -z "${INPUT_GOMIPS}" ] && [[ "${INPUT_GOARCH}" = 'mips' || "${INPUT_GOARCH}" = 'mipsle' || "${INPUT_GOARCH}" = 'mips64' || "${INPUT_GOARCH}" = 'mips64le' ]]; then
   RELEASE_ASSET_NAME=${BINARY_NAME}-${RELEASE_TAG}-${INPUT_GOOS}-${INPUT_GOARCH}-${INPUT_GOMIPS}
 fi
 if [ ! -z "${INPUT_ASSET_NAME}" ]; then
